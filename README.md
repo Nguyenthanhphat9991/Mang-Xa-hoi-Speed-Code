@@ -1,5 +1,5 @@
 # Mang-Xa-hoi-Speed-Code
-xây dựng bài tập mạng xã hội Speed Code viết bằng php và mysql  
+xây dựng bài tập mạng xã hội Speed Code
 
     + bài tập có các tính năng: 
         cho phép đăng trạng thái, hình ảnh
@@ -12,5 +12,10 @@ xây dựng bài tập mạng xã hội Speed Code viết bằng php và mysql
         xây dựng trang chủ: upload các thông tin cá nhân, đăng ảnh, bình luận ảnh, thêm bạn bè (ngày hoàn thiện 27-11-2020)
         xây dựng trang chat: bạn bè có thể chat với nhau (ngày hoàn thiện 11-12-2020)
         kiểm tra lỗi, thiết kế lại giao diện:  (ngày hoàn thiện 25-12-2020)
+
+    + công nghệ: 
+        giao diện sử dụng: HTML,CSS,BOOSTRAP
+        cơ sở dữ liệu: MYSQL
+        ngôn ngữ: PHP
 
     + nội dung tiến độ bài tập em gửi lên theo nhánh developer nhờ thầy theo dõi nội dung ạ     
