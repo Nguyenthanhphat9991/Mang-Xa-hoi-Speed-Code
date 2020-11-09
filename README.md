@@ -1,5 +1,6 @@
 # Mang-Xa-hoi-Speed-Code
 xây dựng bài tập mạng xã hội Speed Code viết bằng php và mysql  
+
     + bài tập có các tính năng: 
         cho phép đăng trạng thái, hình ảnh
         cho phép người dùng bình luận vào ảnh của người khác
