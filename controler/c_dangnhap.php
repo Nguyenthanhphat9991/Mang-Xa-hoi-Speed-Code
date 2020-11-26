@@ -14,7 +14,7 @@ include("../model/m_ketnoidb.php");
 
 		if($check_user == 1){
 			$_SESSION['user_email'] = $email;
-			echo "<script>window.open('../view/trangchu.php', '_self')</script>";
+			echo "<script>window.open('../view/home.php', '_self')</script>";
 		}else{
 			echo"<script>alert('tài khoản hoặc mật khẩu không chính xác')</script>";
 		}

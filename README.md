@@ -1,6 +1,5 @@
 SPEED CODE - NGUYEN THANH PHAT
-
-	Mô tả bài toán: Đây là một trang website mạng xã hội. Website dành cho người sử dụng(user).
+Mô tả bài toán: Đây là một trang website mạng xã hội. Website dành cho người sử dụng(user).
 
     + user: đăng kí tài khoản mới, đăng nhập tài khoản đã có, thay đổi thông tin cá nhân
             đăng trạng thái, hình ảnh

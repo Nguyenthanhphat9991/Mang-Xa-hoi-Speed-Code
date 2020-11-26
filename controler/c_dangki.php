@@ -54,7 +54,7 @@ include("../model/m_ketnoidb.php");
 		
 		if($query){
 			echo "<script>alert('Well Done $first_name, you are good to go.')</script>";
-			echo "<script>window.open('signin.php', '_self')</script>";
+			echo "<script>window.open('../view/home.php', '_self')</script>";
 		}
 		else{
 			echo "<script>alert('Registration failed, please try again!')</script>";
