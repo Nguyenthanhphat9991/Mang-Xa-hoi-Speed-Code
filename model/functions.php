@@ -2,7 +2,8 @@
 include("../model/m_ketnoidb.php");
 
 
-function insertPost(){
+function insertPost()
+{
 	if(isset($_POST['sub'])){
 		global $con;
 		global $user_id;
@@ -72,7 +73,8 @@ function insertPost(){
 	}
 }
 
-function get_posts(){
+function get_posts()
+{
 	global $con;
     $per_page = 4;
     $url_getimageposts = '../assets/imagespost';
@@ -199,7 +201,8 @@ function get_posts(){
 	include("phantrang.php");
 }
 
-	function trang_post(){
+function trang_post()
+{
 		$url_getimageposts = '../assets/imagespost';
 		if (isset($_GET['post_id'])) {
 		global $con;
@@ -274,7 +277,6 @@ function get_posts(){
 									<img id='posts-img' src='$url_getimageposts/$upload_image' style='height:350px;'>
 								</div>
 							</div><br>
-							<a href='../view/v_xem_post.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Bình luận</button></a><br>
 						</div>
 						<div class='col-sm-3'>
 						</div>
@@ -305,7 +307,6 @@ function get_posts(){
 									<img id='posts-img' src='$url_getimageposts/$upload_image' style='height:350px;'>
 								</div>
 							</div><br>
-							<a href='../view/v_xem_post.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Bình luận</button></a><br>
 						</div>
 						<div class='col-sm-3'>
 						</div>
@@ -336,7 +337,6 @@ function get_posts(){
 										<h3><p>$content</p></h3>
 									</div>
 								</div><br>
-								<a href='../view/v_xem_post.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Bình luận</button></a><br>
 							</div>
 							<div class='col-sm-3'>
 							</div>
@@ -351,9 +351,9 @@ function get_posts(){
 								<div class='panel panel-info'>
 									<div class='panel-body'>
 										<form action='' method='post' class='form-inline'>
-											<textarea placeholder='Viết bình luận tại đây'class='pb-cmnt-textarea' 
-												name='binhluan' rows='4' cols='100'></textarea>
-											<button class='btn btn-info pull-right' name='reply'>Bình luận</button>
+											<textarea placeholder='Viết bình luận tại đây' class='form-control'  id='exampleFormControlTextarea4' rows='4' style='width:100%;'
+												name='binhluan'></textarea> <br>
+											<button style='margin-top: 5px;' class='btn btn-info pull-right' name='reply'>Bình luận</button>
 										</form>
 									</div>
 								</div>
@@ -384,5 +384,55 @@ function get_posts(){
 						}
 				}
 		}
+}
+
+function timkiem()
+{
+	global $con;
+	if (isset($_GET['search_user_btn'])) 
+	{
+		$search_query = htmlentities($_GET['search_user']);
+		$sql  = "select * from user_1 where f_name like '%$search_query%' OR
+		l_name like '%$search_query%' OR user_name like '%$search_query%'";
 	}
+	else
+	{
+		$sql = "select * from user_1";
+	}
+
+	$result  = mysqli_query($con,$sql);
+	while ($r = mysqli_fetch_array($result)) 
+	{
+		$user_id = $r['user_id'];
+		$f_name = $r['f_name'];
+		$l_name = $r['l_name'];
+		$username = $r['user_name'];
+		$user_image = $r['user_image'];
+
+		echo"
+			<div class='row'>
+				<div class='col-sm-3'>
+				</div>
+				<div class='col-sm-6'>
+					<div class='row' id='find_people'>
+						<div class='col-sm-4'>
+							<a href='v_profile.php?u_id=$user_id'>
+								<img src='$user_image' width='150px' height='140px' title='$username' style='float:left; margin:1px;'/>
+							</a>
+						</div><br><br>
+						<div class='col-sm--6'>
+							<a style='text-decoration:none; cursor: pointer;color:#3897fo; 'href='v_profile.php?u_id=$user_id'>
+								<strong><h2>$f_name $l_name</h2></strong>
+							</a>
+						</div>
+						<div class='col-sm-3'>
+						</div>
+					</div>
+				</div>
+				<div class='col-sm-3'>
+				</div>
+			</div><br><br> ";
+	}
+}
+	
 ?>

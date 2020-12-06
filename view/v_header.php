@@ -46,9 +46,9 @@ include("../model/functions.php");
 			?>
 
 	        <li><a href='v_profile.php?<?php echo "u_id=$user_id" ?>'><?php echo "$first_name"; ?></a></li>
-	       	<li><a href="home.php">Home</a></li>
-			<li><a href="members.php">Find People</a></li>
-			<li><a href="messages.php?u_id=new">Messages</a></li>
+	       	<li><a href="home.php">Trang chủ</a></li>
+			<li><a href="v_tim_ban_be.php">Tìm kiếm bạn bè</a></li>
+			<li><a href="chat.php?u_id=new">Chat</a></li>
 
 					<?php
 						echo"
@@ -56,14 +56,11 @@ include("../model/functions.php");
 							<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span><i class='glyphicon glyphicon-chevron-down'></i></span></a>
 							<ul class='dropdown-menu'>
 								<li>
-									<a href='my_post.php?u_id=$user_id'>My Posts <span class='badge badge-secondary'>$posts</span></a>
-								</li>
-								<li>
-									<a href='edit_profile.php?u_id=$user_id'>Edit Account</a>
+									<a href='v_profile.php?u_id=$user_id'>Edit Account</a>
 								</li>
 								<li role='separator' class='divider'></li>
 								<li>
-									<a href='logout.php'>Logout</a>
+									<a href='v_dang_xuat.php'>Đăng xuất</a>
 								</li>
 							</ul>
 						</li>
@@ -76,7 +73,7 @@ include("../model/functions.php");
 						<div class="form-group">
 							<input type="text" class="form-control" name="user_query" placeholder="Search">
 						</div>
-						<button type="submit" class="btn btn-info" name="search">Search</button>
+						<button type="submit" class="btn btn-info" name="search">Tìm kiếm</button>
 					</form>
 				</li>
 			</ul>
