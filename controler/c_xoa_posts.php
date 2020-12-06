@@ -12,7 +12,5 @@
             echo "<script>window.open('../view/home.php', '_self')</script>";
         }
     }
-
-
 ?>
 

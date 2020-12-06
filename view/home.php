@@ -30,11 +30,11 @@ if(!isset($_SESSION['user_email'])){
 	<div id="insert_post" class="col-sm-12">
 		<center>
 		<form action="home.php?id=<?php echo $user_id; ?>" method="post" id="f" enctype="multipart/form-data">
-		<textarea class="form-control" id="content" rows="4" name="content" placeholder="What's in your mind?"></textarea><br>
-		<label class="btn btn-warning" id="upload_image_button">Select Image
-		<input type="file" name="upload_image" size="30">
-		</label>
-		<button id="btn-post" class="btn btn-success" name="sub">Post</button>
+			<textarea class="form-control" id="content" rows="4" name="content" placeholder="Cập nhật tâm trạng"></textarea><br>
+			<label class="btn btn-warning" id="upload_image_button">Chọn hình ảnh
+			<input type="file" name="upload_image" size="30">
+			</label>
+			<button id="btn-post" class="btn btn-success" name="sub">Đăng</button>
 		</form>
 		<?php insertPost(); ?>
 		</center>

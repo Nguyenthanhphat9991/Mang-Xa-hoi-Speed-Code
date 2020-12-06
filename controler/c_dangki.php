@@ -20,11 +20,6 @@ include("../model/m_ketnoidb.php");
 		$check_username_query = "select user_name from user_1 where user_email='$email'";
 		$run_username = mysqli_query($con,$check_username_query);
 
-		// if(strlen($pass) <9 ){
-		// 	echo"<script>alert('Password should be minimum 9 characters!')</script>";
-		// 	exit();
-		// }
-
 		$check_email = "select * from user_1 where user_email='$email'";
 		$run_email = mysqli_query($con,$check_email);
 
@@ -39,11 +34,11 @@ include("../model/m_ketnoidb.php");
 		$rand = rand(1, 3);
 
 			if($rand == 1)
-				$profile_pic = "../assets/images/covit.png";
+				$profile_pic = "../assets/images/avatar_mac_dinh.png";
 			else if($rand == 2)
-				$profile_pic = "../assets/images/covit.png";
+				$profile_pic = "../assets/images/avatar_mac_dinh.png";
 			else if($rand == 3)
-				$profile_pic = "../assets/images/covit.png";
+				$profile_pic = "../assets/images/avatar_mac_dinh.png";
 
 				$them = "insert into user_1 (f_name,l_name,user_name,describe_user,Relationship,user_pass,user_email
 				,user_country,user_gender,user_birthday,user_image,user_cover,user_reg_date,status,posts,recovery_account)

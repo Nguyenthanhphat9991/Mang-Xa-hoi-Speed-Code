@@ -220,7 +220,7 @@ if (!isset($_SESSION['user_email'])) {
 								</div>
 								<div class='col-sm-6'>
 									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?u_id=$user_id'>$user_name</a></h3>
-									<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
+									<h4><small style='color:black;'>lúc <strong>$post_date</strong></small></h4>
 								</div>
 								<div class='col-sm-4'>
 								</div>
@@ -230,15 +230,8 @@ if (!isset($_SESSION['user_email'])) {
 									<img id='posts-img' src='$url_getimageposts/$upload_image' style='height:350px;'>
 								</div>
 							</div>
-								<br>
-							<a href='single.php?post_id=$post_id' style='float:right;'>
-								<button class='btn btn-success'>Xem</button>
-							</a>
-							<a href='../model/xoa_posts.php?post_id=$post_id' style='float:right;'>
-								<button class='btn btn-danger'>Xóa</button>
-							</a>
-						</div><br><br>
 						";
+						include('./them_xoa_sua_profile.php');
 					}
 
 					else if(strlen($content) >= 1 && strlen($upload_image) >=1){
@@ -249,8 +242,8 @@ if (!isset($_SESSION['user_email'])) {
 									<p><img src='$user_image' class='img-circle' width='100px' height='100px'></p>
 								</div>
 								<div class='col-sm-6'>
-									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?u_id=$user_id'>$user_name</a></h3>
-									<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
+									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='v_profile.php?u_id=$user_id'>$user_name</a></h3>
+									<h4><small style='color:black;'>lúc <strong>$post_date</strong></small></h4>
 								</div>
 								<div class='col-sm-4'>
 								</div>
@@ -263,15 +256,8 @@ if (!isset($_SESSION['user_email'])) {
 									<img id='posts-img' src='$url_getimageposts/$upload_image' style='height:350px;'>
 								</div>
 							</div>
-								<br>
-							<a href='single.php?post_id=$post_id' style='float:right;'>
-								<button class='btn btn-success'>Xem</button>
-							</a>
-							<a href='../model/xoa_posts.php?post_id=$post_id' style='float:right;'>
-								<button class='btn btn-danger'>Xóa</button>
-							</a>
-						</div><br><br>
 						";
+						include('./them_xoa_sua_profile.php');
 					}
 
 					else {
@@ -283,7 +269,7 @@ if (!isset($_SESSION['user_email'])) {
 								</div>
 								<div class='col-sm-6'>
 									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?u_id=$user_id'>$user_name</a></h3>
-									<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
+									<h4><small style='color:black;'>lúc <strong>$post_date</strong></small></h4>
 								</div>
 								<div class='col-sm-4'>
 								</div>
@@ -300,49 +286,7 @@ if (!isset($_SESSION['user_email'])) {
 								</div>
 							</div>
 						";
-
-						global $con;
-						if (isset($_GET['u_id'])) {
-							$u_id = ($_GET['u_id']);
-						}
-
-						$get_postsemail = "
-						select user_email from user_1 
-						where user_id = '$u_id'";
-
-						$run_user = mysqli_query($con, $get_postsemail);
-						$row = mysqli_fetch_array($run_user);
-						
-						$user_email = $row['user_email'];
-
-						$user = $_SESSION['user_email'];
-						
-						$get_user = "select * from user_1
-						where user_email = '$user'" ;
-
-						$run_user = mysqli_query($con,$get_user);
-						$row = mysqli_fetch_array($run_user);
-
-						$user_id = $row['user_id'];
-						$u_email = $row['user_email'];
-
-						if($u_email != $user_email){
-							echo "<script>window.open('v_profile.php?u_id=$user_id', '_self')</script>";
-						}
-						else{
-							echo "
-							 <a href='single.php?post_id=$post_id' style='float:right;'>
-								<button class='btn btn-success'>Xem</button>
-							</a>
-							<a href='edit_post.php?post_id=$post_id' style='float:right;'>
-								<button class='btn btn-info'>Sửa</button>
-							</a>
-							<a href='../controler/c_xoa_posts.php?post_id=$post_id' style='float:right;'>
-								<button class='btn btn-danger'>Xóa</button>
-							</a>
-					</div><br><br><br>
-						";
-						}
+					include('./them_xoa_sua_profile.php');
 					}
 				}
 			?>
