@@ -71,7 +71,7 @@ if (!isset($_SESSION['user_email'])) {
 			echo "
 			<div>
 				<div><img id='cover-img' class='img-rounded' src='$user_cover' alt='cover' ></div>
-				<form action='v_profile.php?u_id=$user_id' method='post' enctype='multipart/form-data'>
+				<form action='v_profile.php?user_id=$user_id' method='post' enctype='multipart/form-data'>
 
 				<ul class='nav pull-left' style='position:absolute;top:10px;left:40px;'>
 					<li class='dropdown'>
@@ -92,7 +92,7 @@ if (!isset($_SESSION['user_email'])) {
             
             <div id='profile-img'>
             <img src='$user_image' alt='Profile' class='img-circle' width='180px' height='185px'>
-            <form action='v_profile.php?u_id='$user_id' method='post' enctype='multipart/form-data'>
+            <form action='v_profile.php?user_id='$user_id' method='post' enctype='multipart/form-data'>
 
             <label id='update_profile'> Select Profile
             <input type='file' name='u_image' size='60' />
@@ -114,7 +114,7 @@ if (!isset($_SESSION['user_email'])) {
 
 				if ($u_cover == '') {
 					echo "<script>alert('Please Select Cover Image')</script>";
-					echo "<script>window.open('v_profile.php?u_id=$user_id' , '_self')</script>";
+					echo "<script>window.open('v_profile.php?user_id=$user_id' , '_self')</script>";
 					exit();
 				} else {
 					move_uploaded_file($image_tmp, $url_cover);
@@ -124,7 +124,7 @@ if (!isset($_SESSION['user_email'])) {
 
 					if ($run) {
 						echo "<script>alert('Your Cover Updated')</script>";
-						echo "<script>window.open('v_profile.php?u_id=$user_id' , '_self')</script>";
+						echo "<script>window.open('v_profile.php?user_id=$user_id' , '_self')</script>";
 					}
 				}
 			}
@@ -143,7 +143,7 @@ if (!isset($_SESSION['user_email'])) {
 
 			if ($u_image == '') {
 				echo "<script>alert('Please Select Profile Image on clicking on your profile image')</script>";
-				echo "<script>window.open('v_profile.php?u_id=$user_id' , '_self')</script>";
+				echo "<script>window.open('v_profile.php?user_id=$user_id' , '_self')</script>";
 				exit();
 			} else {
 				move_uploaded_file($image_tmp, $url_image);
@@ -153,7 +153,7 @@ if (!isset($_SESSION['user_email'])) {
 
 				if ($run) {
 					echo "<script>alert('Your Profile Updated')</script>";
-					echo "<script>window.open('v_profile.php?u_id=$user_id' , '_self')</script>";
+					echo "<script>window.open('v_profile.php?user_id=$user_id' , '_self')</script>";
 				}
 			}
 		}
@@ -183,13 +183,13 @@ if (!isset($_SESSION['user_email'])) {
         <div class="col-sm-6">
             <?php 
 				global $con;
-				if (isset($_GET['u_id'])) {
-					$u_id = ($_GET['u_id']);
+				if (isset($_GET['user_id'])) {
+					$user_id = ($_GET['user_id']);
 				}
 
 				$get_posts = "
 				select * from posts 
-				where user_id = '$u_id'
+				where user_id = '$user_id'
 				order by 1 desc limit 5";
 
 				$run_posts = mysqli_query($con, $get_posts);
@@ -219,14 +219,14 @@ if (!isset($_SESSION['user_email'])) {
 									<p><img src='$user_image' class='img-circle' width='100px' height='100px'></p>
 								</div>
 								<div class='col-sm-6'>
-									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?u_id=$user_id'>$user_name</a></h3>
+									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='v_profile.php?user_id=$user_id'>$user_name</a></h3>
 									<h4><small style='color:black;'>lúc <strong>$post_date</strong></small></h4>
 								</div>
 								<div class='col-sm-4'>
 								</div>
 							</div>
 							<div class='row'>
-								<div class='col-sm-12'>
+								<div class='col-sm-6'>
 									<img id='posts-img' src='$url_getimageposts/$upload_image' style='height:350px;'>
 								</div>
 							</div>
@@ -242,14 +242,14 @@ if (!isset($_SESSION['user_email'])) {
 									<p><img src='$user_image' class='img-circle' width='100px' height='100px'></p>
 								</div>
 								<div class='col-sm-6'>
-									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='v_profile.php?u_id=$user_id'>$user_name</a></h3>
+									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='v_profile.php?user_id=$user_id'>$user_name</a></h3>
 									<h4><small style='color:black;'>lúc <strong>$post_date</strong></small></h4>
 								</div>
 								<div class='col-sm-4'>
 								</div>
 							</div>
 							<div class='row'>
-								<div class='col-sm-12'>
+								<div class='col-sm-6'>
 									<h3>
 										<p>$content</p>
 									</h3>
@@ -268,7 +268,7 @@ if (!isset($_SESSION['user_email'])) {
 									<p><img src='$user_image' class='img-circle' width='100px' height='100px'></p>
 								</div>
 								<div class='col-sm-6'>
-									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?u_id=$user_id'>$user_name</a></h3>
+									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='v_profile.php?user_id=$user_id'>$user_name</a></h3>
 									<h4><small style='color:black;'>lúc <strong>$post_date</strong></small></h4>
 								</div>
 								<div class='col-sm-4'>

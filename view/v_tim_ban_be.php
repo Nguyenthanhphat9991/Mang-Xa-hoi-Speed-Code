@@ -25,9 +25,22 @@ if(!isset($_SESSION['user_email'])){
                 <div class="col-sm-4">
                 </div>
                 <div class="col-sm-4">
-                    <form class="search_form" action="">
-                        <input type="text" placeholder="Tìm bạn bè" name="search_user">
-                            <button class="btn btn-info" type="submit" 
+                    <form class="search_form" action="" >
+                        <input style='padding: 10px;
+                                            font-size: 17px;
+                                            border-radius: 4px; 
+                                            border: 1px solid grey; 
+                                            float: left;width: 80%;
+                                            background: #f1f1f1;'
+                            type="text" placeholder="Tìm bạn bè" name="search_user">
+                        <button style='float: left;
+                                            width: 20%;
+                                            padding: 10px;
+                                            font-size: 17px;
+                                            border: 1px solid grey;
+                                            border-left: none;
+                                            cursor: pointer;'
+                            class="btn btn-info" type="submit" 
                             name="search_user_btn">Tìm</button>
                     </form>
                 </div>

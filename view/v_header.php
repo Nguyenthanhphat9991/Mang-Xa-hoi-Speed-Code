@@ -45,10 +45,10 @@ include("../model/functions.php");
 			$posts = mysqli_num_rows($run_posts);
 			?>
 
-	        <li><a href='v_profile.php?<?php echo "u_id=$user_id" ?>'><?php echo "$first_name"; ?></a></li>
+	        <li><a href='v_profile.php?<?php echo "user_id=$user_id" ?>'><?php echo "$first_name"; ?></a></li>
 	       	<li><a href="home.php">Trang chủ</a></li>
 			<li><a href="v_tim_ban_be.php">Tìm kiếm bạn bè</a></li>
-			<li><a href="chat.php?u_id=new">Chat</a></li>
+			<li><a href="chat.php?user_id=new">Chat</a></li>
 
 					<?php
 						echo"
@@ -56,7 +56,7 @@ include("../model/functions.php");
 							<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span><i class='glyphicon glyphicon-chevron-down'></i></span></a>
 							<ul class='dropdown-menu'>
 								<li>
-									<a href='v_profile.php?u_id=$user_id'>Edit Account</a>
+									<a href='v_profile.php?user_id=$user_id'>Edit Account</a>
 								</li>
 								<li role='separator' class='divider'></li>
 								<li>

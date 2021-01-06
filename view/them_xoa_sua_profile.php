@@ -1,10 +1,10 @@
 <?php
 global $con;
-if (isset($_GET['u_id'])) {
-    $u_id = ($_GET['u_id']);
+if (isset($_GET['user_id'])) {
+    $user_id = ($_GET['user_id']);
 }
 
-$get_postsemail = "select user_email from user_1 where user_id = '$u_id'";
+$get_postsemail = "select user_email from user_1 where user_id = '$user_id'";
 
 $run_user = mysqli_query($con, $get_postsemail);
 $row = mysqli_fetch_array($run_user);
@@ -23,7 +23,7 @@ $user_id = $row['user_id'];
 $u_email = $row['user_email'];
 
 if($u_email != $user_email){
-    echo "<script>window.open('v_profile.php?u_id=$user_id', '_self')</script>";
+    echo "<script>window.open('v_profile.php?user_id=$user_id', '_self')</script>";
 }
 else{
     echo "

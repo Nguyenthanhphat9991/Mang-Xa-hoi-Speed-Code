@@ -22,7 +22,7 @@ function insertPost()
 			if(strlen($upload_image) >= 1 && strlen($content) >= 1){
 				move_uploaded_file($image_tmp, "$url_posts/$random_number.$upload_image");
 				$insert = "insert into posts (user_id, post_content, upload_image, post_date) values('$user_id', '$content', '$random_number.$upload_image', NOW())";
-
+				
 				$run = mysqli_query($con, $insert);
 
 				if($run){
@@ -42,6 +42,7 @@ function insertPost()
 					if($content==''){
 						move_uploaded_file($image_tmp, "$url_posts/$random_number.$upload_image");
 						$insert = "insert into posts (user_id,post_content,upload_image,post_date) values ('$user_id','No','$random_number.$upload_image',NOW())";
+						
 						$run = mysqli_query($con, $insert);
 
 						if($run){
@@ -55,6 +56,7 @@ function insertPost()
 						exit();
 					}else{
 						$insert = "insert into posts (user_id, post_content, post_date) values('$user_id', '$content', NOW())";
+						
 						$run = mysqli_query($con, $insert);
 
 						if($run){
@@ -99,7 +101,7 @@ function get_posts()
 		$upload_image = $row_posts['upload_image'];
 		$post_date = $row_posts['post_date'];
 
-		$user = "select * from user_1 where user_id='$user_id' AND posts='yes'";
+		$user = "select * from user_1 where user_id='$user_id' ";
 		$run_user = mysqli_query($con,$user);
 		$row_user = mysqli_fetch_array($run_user);
 
@@ -118,7 +120,7 @@ function get_posts()
 						<p><img src='$user_image' class='img-circle' width='100px' height='100px'></p>
 						</div>
 						<div class='col-sm-6'>
-							<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='v_profile.php?u_id=$user_id'>$user_name</a></h3>
+							<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?user_id=$user_id'>$user_name</a></h3>
 							<h4><small style='color:black;'>lúc <strong>$post_date</strong></small></h4>
 						</div>
 						<div class='col-sm-4'>
@@ -148,7 +150,7 @@ function get_posts()
 						<p><img src='$user_image' class='img-circle' width='100px' height='100px'></p>
 						</div>
 						<div class='col-sm-6'>
-							<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='v_profile.php?u_id=$user_id'>$user_name</a></h3>
+							<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?user_id=$user_id'>$user_name</a></h3>
 							<h4><small style='color:black;'>lúc <strong>$post_date</strong></small></h4>
 						</div>
 						<div class='col-sm-4'>
@@ -156,7 +158,7 @@ function get_posts()
 					</div>
 					<div class='row'>
 						<div class='col-sm-6'>
-							<p>$content</p>
+							<p>$content</p> 
 							<img id='posts-img' src='$url_getimageposts/$upload_image' style='height:350px;'>
 						</div>
 					</div><br>
@@ -179,7 +181,7 @@ function get_posts()
 						<p><img src='$user_image' class='img-circle' width='100px' height='100px'></p>
 						</div>
 						<div class='col-sm-6'>
-							<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='v_profile.php?u_id=$user_id'>$user_name</a></h3>
+							<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?user_id=$user_id'>$user_name</a></h3>
 							<h4><small style='color:black;'>lúc <strong>$post_date</strong></small></h4>
 						</div>
 						<div class='col-sm-4'>
@@ -266,7 +268,7 @@ function trang_post()
 								<p><img src='$user_image' class='img-circle' width='100px' height='100px'></p>
 								</div>
 								<div class='col-sm-6'>
-									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='v_profile.php?u_id=$user_id'>$user_name</a></h3>
+									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='v_profile.php?user_id=$user_id'>$user_name</a></h3>
 									<h4><small style='color:black;'>lúc <strong>$post_date</strong></small></h4>
 								</div>
 								<div class='col-sm-4'>
@@ -295,7 +297,7 @@ function trang_post()
 								<p><img src='$user_image' class='img-circle' width='100px' height='100px'></p>
 								</div>
 								<div class='col-sm-6'>
-									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='v_profile.php?u_id=$user_id'>$user_name</a></h3>
+									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='v_profile.php?user_id=$user_id'>$user_name</a></h3>
 									<h4><small style='color:black;'>lúc <strong>$post_date</strong></small></h4>
 								</div>
 								<div class='col-sm-4'>
@@ -326,7 +328,7 @@ function trang_post()
 									<p><img src='$user_image' class='img-circle' width='100px' height='100px'></p>
 									</div>
 									<div class='col-sm-6'>
-										<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='v_profile.php?u_id=$user_id'>$user_name</a></h3>
+										<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='v_profile.php?user_id=$user_id'>$user_name</a></h3>
 										<h4><small style='color:black;'>lúc <strong>$post_date</strong></small></h4>
 									</div>
 									<div class='col-sm-4'>
@@ -414,14 +416,15 @@ function timkiem()
 				<div class='col-sm-3'>
 				</div>
 				<div class='col-sm-6'>
-					<div class='row' id='find_people'>
+					<div class='row' id='find_people' 
+					style='border: 5px solid #e6e6e6; padding: 40px 50px;' >
 						<div class='col-sm-4'>
-							<a href='v_profile.php?u_id=$user_id'>
+							<a href='user_profile.php?user_id=$user_id'>
 								<img src='$user_image' width='150px' height='140px' title='$username' style='float:left; margin:1px;'/>
 							</a>
 						</div><br><br>
 						<div class='col-sm--6'>
-							<a style='text-decoration:none; cursor: pointer;color:#3897fo; 'href='v_profile.php?u_id=$user_id'>
+							<a style='text-decoration:none; cursor: pointer;color:#3897fo; 'href='user_profile.php?user_id=$user_id'>
 								<strong><h2>$f_name $l_name</h2></strong>
 							</a>
 						</div>
