@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2021 at 07:15 PM
+-- Generation Time: Jan 09, 2021 at 07:08 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -65,6 +65,34 @@ INSERT INTO `binh_luan` (`bl_id`, `post_id`, `user_id`, `binh_luan`, `nguoi_binh
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `chat`
+--
+
+CREATE TABLE `chat` (
+  `id` int(11) NOT NULL,
+  `nguoi_gui` int(11) NOT NULL,
+  `nguoi_nhan` int(11) NOT NULL,
+  `noidunggui` varchar(255) NOT NULL,
+  `thoigian` timestamp NOT NULL DEFAULT current_timestamp(),
+  `noidungxem` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `chat`
+--
+
+INSERT INTO `chat` (`id`, `nguoi_gui`, `nguoi_nhan`, `noidunggui`, `thoigian`, `noidungxem`) VALUES
+(70, 5, 8, 'my name is ali - tao t&ecirc;n l&agrave; ali', '2021-01-09 18:01:16', 'no'),
+(69, 8, 5, 'c&ograve;n m&agrave;y t&ecirc;n g&igrave;', '2021-01-09 18:01:13', 'no'),
+(68, 8, 5, 'my name is ph&aacute;t - Tao t&ecirc;n l&agrave; ph&aacute;t', '2021-01-09 18:00:45', 'no'),
+(77, 5, 8, 'ch&agrave;o ph&aacute;t nha', '2021-01-09 18:03:08', 'no'),
+(76, 5, 8, 'ch&agrave;o l?n n?a', '2021-01-09 18:03:00', 'no'),
+(78, 8, 5, 'ng? ngon', '2021-01-09 18:07:35', 'no'),
+(75, 5, 8, 'oke ch&agrave;o', '2021-01-09 18:02:52', 'no');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `posts`
 --
 
@@ -89,7 +117,8 @@ INSERT INTO `posts` (`post_id`, `user_id`, `post_content`, `upload_image`, `post
 (93, 9, 'a', '26.1.png', '2020-12-19 17:21:06'),
 (94, 9, 'a', '', '2020-12-19 17:28:16'),
 (95, 5, 'a', '', '2021-01-06 17:41:42'),
-(96, 5, 'No', '76.2.png', '2021-01-06 17:44:31');
+(96, 5, 'No', '76.2.png', '2021-01-06 17:44:31'),
+(97, 5, 'a', '', '2021-01-09 17:42:31');
 
 -- --------------------------------------------------------
 
@@ -139,6 +168,12 @@ ALTER TABLE `binh_luan`
   ADD PRIMARY KEY (`bl_id`);
 
 --
+-- Indexes for table `chat`
+--
+ALTER TABLE `chat`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
@@ -161,10 +196,16 @@ ALTER TABLE `binh_luan`
   MODIFY `bl_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
+-- AUTO_INCREMENT for table `chat`
+--
+ALTER TABLE `chat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+
+--
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `user_1`

@@ -3,5 +3,5 @@ session_start();
 
 session_destroy();
 
-header("location: http://localhost/speed_code/");
+header("location: http://localhost:800/speed_code/");
 ?>
