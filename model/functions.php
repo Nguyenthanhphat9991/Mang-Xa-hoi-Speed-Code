@@ -16,7 +16,7 @@ function insertPost()
 		$random_number = rand(1, 100);
 
 		if(strlen($content) > 250){
-			echo "<script>alert('Please Use 250 or less than 250 words!')</script>";
+			echo "<script>alert('Nội dung quá dài!!')</script>";
 			echo "<script>window.open('home.php', '_self')</script>";
 		}else{
 			if(strlen($upload_image) >= 1 && strlen($content) >= 1){
@@ -26,7 +26,7 @@ function insertPost()
 				$run = mysqli_query($con, $insert);
 
 				if($run){
-					echo "<script>alert('Your Post updated a moment ago!')</script>";
+					echo "<script>alert('Bài viết đã được cập nhật!!')</script>";
 					echo "<script>window.open('home.php', '_self')</script>";
 
 					$update = "update user_1 set posts='yes' where user_id='$user_id'";
@@ -46,7 +46,7 @@ function insertPost()
 						$run = mysqli_query($con, $insert);
 
 						if($run){
-							echo "<script>alert('Your Post updated a moment ago!')</script>";
+							echo "<script>alert('Bài viết đã được cập nhật!!')</script>";
 							echo "<script>window.open('home.php', '_self')</script>";
 
 							$update = "update user_1 set posts='yes' where user_id='$user_id'";
@@ -60,7 +60,7 @@ function insertPost()
 						$run = mysqli_query($con, $insert);
 
 						if($run){
-							echo "<script>alert('Your Post updated a moment ago!')</script>";
+							echo "<script>alert('Bài viết đã được cập nhật!!')</script>";
 							echo "<script>window.open('home.php', '_self')</script>";
 
 							$update = "update user_1 set posts='yes' where user_id='$user_id'";

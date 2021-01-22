@@ -2,7 +2,6 @@
 <?php
 session_start();
 include("./v_header.php");
-
 if(!isset($_SESSION['user_email'])){
 	header("location: index.php");
 }
@@ -11,9 +10,9 @@ if(!isset($_SESSION['user_email'])){
 <head>
 	<?php
 		$user = $_SESSION['user_email'];
-		$get_user = "select * from user_1 where user_email='$user'";
-		$run_user = mysqli_query($con,$get_user);
-		$row = mysqli_fetch_array($run_user);
+		// $get_user = "select * from user_1 where user_email='$user'";
+		// $run_user = mysqli_query($con,$get_user);
+		// $row = mysqli_fetch_array($run_user);
 		$user_name = $row['user_name'];
 	?>
 	<title><?php echo "$user_name"; ?></title>

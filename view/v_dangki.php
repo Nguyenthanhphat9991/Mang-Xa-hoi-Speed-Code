@@ -49,7 +49,8 @@
 				<hr>
 			</div>
 			<div class="l-part">
-				<form action="" method="post">
+				<form action="../controler/c_dangki.php" method="post">
+
 					<div class="input-group">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
 						<input type="text" class="form-control" placeholder="First Name" name="first_name" required="required">
@@ -95,7 +96,7 @@
 					<a style="text-decoration: none;float: right;color: #187FAB;" data-toggle="tooltip" title="Signin" href="./v_dangnhap.php">Tôi đã có tài khoản</a><br><br>
 
 					<center><button id="signup" class="btn btn-info btn-lg" name="dangki">Signup</button></center>
-					 <?php include("../controler/c_dangki.php"); ?> 
+
 				</form>
 			</div>
 		</div>

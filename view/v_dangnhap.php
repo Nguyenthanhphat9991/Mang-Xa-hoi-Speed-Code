@@ -60,7 +60,7 @@
 				<h3 style="text-align: center;"><strong>Đăng nhập tài khoản Speed Code</strong></h3>
 			</div>
 			<div class="l-part">
-				<form action="" method="post">
+				<form action="../controler/c_dangnhap.php" method="post">
 					<input type="email" name="email" placeholder="Email" required="required" class="form-control input-md"><br>
 					<div class="overlap-text">
 						<input type="password" name="pass" placeholder="Password" required="required" class="form-control input-md"><br>
@@ -69,7 +69,7 @@
 					<a style="text-decoration: none;float: right;color: #187FAB;" data-toggle="tooltip" title="Create Account!" href="./v_dangki.php">Tôi chưa có tài khoản?</a><br><br>
 
 					<center><button id="signin" class="btn btn-info btn-lg" name="login">Login</button></center>
-					<?php include("../controler/c_dangnhap.php"); ?>
+				
 				</form>
 			</div>
 		</div>

@@ -5,7 +5,7 @@
     include('./v_header.php');
 
     if(!isset($_SESSION['user_email'])){
-        header("location: http://localhost/speed_code/");
+        header("location: ../index.php");
     }
 ?>
 

@@ -1,60 +1,53 @@
 <?php
-include("../model/m_ketnoidb.php"); 
+    include("../model/ketnoi.php"); 
+
+    $ketnoi = new Ketnoi();
 	if(isset($_POST['dangki'])){
+        if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u_pass']) 
+        && isset($_POST['u_email']) && isset($_POST['u_country']) && isset($_POST['u_gender'])&& isset($_POST['u_birthday'])) {
+            if (!empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['u_pass']) 
+            && !empty($_POST['u_email']) && !empty($_POST['u_country']) && !empty($_POST['u_gender'])&& !empty($_POST['u_birthday'])){
+                $newgid = sprintf('%05d', rand(0, 999999));
+                $mota = "hello speed code";
+                $moiquanhe = "ddocj than";
+                $hinhdaidien = "../assets/images/avatar_mac_dinh.png";
+                $hinhbia = "../assets/images/banner.png";
 
-		$first_name = $con -> real_escape_string($_POST['first_name']);
-		$last_name = $con -> real_escape_string($_POST['last_name']);
-		$pass = $con -> real_escape_string($_POST['u_pass']);
-		$email = $con -> real_escape_string($_POST['u_email']);
-		$country = $con -> real_escape_string($_POST['u_country']);
-		$gender = $con -> real_escape_string($_POST['u_gender']);
-		$birthday = $con -> real_escape_string($_POST['u_birthday']);
+                $insert['first_name'] = $_POST['first_name'];
+                $insert['last_name'] = $_POST['last_name'];
 
-		$status = "hoatdong";
-		$posts = "no";
+                $user_name= ($insert['first_name']. "_" .$insert['last_name']. "_" .$newgid);
 
+                $insert['user_name'] = $user_name;
+                $insert['describe_user'] = $mota;
+                $insert['Relationship'] = $moiquanhe;
+                $insert['user_pass'] = $_POST['u_pass'];
+                $insert['user_email'] = $_POST['u_email'];
+                $insert['user_country'] = $_POST['u_country'];
+                $insert['user_gender'] = $_POST['u_gender'];
+                $insert['user_birthday'] = $_POST['u_birthday'];
+                $insert['user_image'] = $hinhdaidien;
+                $insert['user_cover'] = $hinhbia;
+           
+                $insert['status'] = "hoatdong";
+                $insert['posts'] = "no";;
+                $insert['recovery_account'] = "Chua kich hoat";
 
-		$newgid = sprintf('%05d', rand(0, 999999));
-		$user_name= ($first_name. "_" .$last_name. "_" .$newgid);
+                $update = $ketnoi->insert_dangki($insert);
 
-		$check_username_query = "select user_name from user_1 where user_email='$email'";
-		$run_username = mysqli_query($con,$check_username_query);
-
-		$check_email = "select * from user_1 where user_email='$email'";
-		$run_email = mysqli_query($con,$check_email);
-
-		$check = mysqli_num_rows($run_email);
-
-		if($check == 1){
-			echo "<script>alert('Email already exist, Please try using another email')</script>";
-			echo "<script>window.open('signup.php', '_self')</script>";
-			exit();
-		}
-
-		$rand = rand(1, 3);
-
-			if($rand == 1)
-				$profile_pic = "../assets/images/avatar_mac_dinh.png";
-			else if($rand == 2)
-				$profile_pic = "../assets/images/avatar_mac_dinh.png";
-			else if($rand == 3)
-				$profile_pic = "../assets/images/avatar_mac_dinh.png";
-
-				$them = "insert into user_1 (f_name,l_name,user_name,describe_user,Relationship,user_pass,user_email
-				,user_country,user_gender,user_birthday,user_image,user_cover,user_reg_date,status,posts,recovery_account)
-				values('$first_name','$last_name','$user_name','Hello Coding Cafe.This is my default status!','...','$pass','$email'
-				,'$country','$gender','$birthday','$profile_pic','../assets/images/banner.png',NOW(),'$status','$posts','Iwanttoputading intheuniverse.')";
+                if($insert){
+                    echo "<script>alert('đăng kí thành công');</script>";
+                    echo "<script>window.location.href = '../view/v_dangnhap.php';</script>";
+                }else{
+                    echo "<script>alert('lỗi');</script>";
+                    echo "<script>window.location.href = '../view/v_dangnhap.php';</script>";
+                }
+            }else{
+                    echo "<script>alert('rỗng');</script>";
+                    echo "<script>window.location.href = '../view/v_dangnhap.php';</script>";
+                }
+            }
+        }
+        
 		
-		$query = mysqli_query($con,$them);
-		
-		if($query){
-			echo "<script>alert('Well Done $first_name, you are good to go.')</script>";
-			echo "<script>window.open('../index.php', '_self')</script>";
-		}
-		else{
-			echo "<script>alert('Registration failed, please try again!')</script>";
-			echo "<script>window.open('../view/v_dangki.php', '_self')</script>";
-		}
-	}
-	mysqli_close($con);
 ?>
