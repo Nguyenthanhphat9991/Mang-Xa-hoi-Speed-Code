@@ -4,7 +4,7 @@ session_start();
 include("./v_header.php");
 
 if (!isset($_SESSION['user_email'])) {
-	header("location: index.php");
+	header("location: ../index.php");
 }
 ?>
 <html>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2021 at 05:58 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.4.13
+-- Generation Time: Jan 09, 2021 at 07:08 PM
+-- Server version: 10.4.16-MariaDB
+-- PHP Version: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -60,8 +60,7 @@ INSERT INTO `binh_luan` (`bl_id`, `post_id`, `user_id`, `binh_luan`, `nguoi_binh
 (17, 86, 5, 'l&ecirc;u l&ecirc;u lớn rồi m&agrave; đi chơi vs khỉ =))', 'ali_Ce_91930', '2020-12-06 08:08:30'),
 (18, 88, 8, 'hazza :3 :3', 'phat_nguyen_726467', '2020-12-06 13:52:43'),
 (19, 83, 5, 'xinh g&aacute;i qu&aacute; ', 'phat_nguyen_726467', '2021-01-03 05:47:28'),
-(20, 96, 5, 'a', 'phat_nguyen_726467', '2021-01-06 18:01:28'),
-(21, 102, 5, 'a', 'phat_nguyen_726467', '2021-01-22 15:40:20');
+(20, 96, 5, 'a', 'phat_nguyen_726467', '2021-01-06 18:01:28');
 
 -- --------------------------------------------------------
 
@@ -119,10 +118,7 @@ INSERT INTO `posts` (`post_id`, `user_id`, `post_content`, `upload_image`, `post
 (94, 9, 'a', '', '2020-12-19 17:28:16'),
 (95, 5, 'a', '', '2021-01-06 17:41:42'),
 (96, 5, 'No', '76.2.png', '2021-01-06 17:44:31'),
-(97, 5, 'a', '', '2021-01-09 17:42:31'),
-(99, 5, 'a', '', '2021-01-21 04:53:58'),
-(101, 5, 'a', '52.1.jpg', '2021-01-22 15:37:36'),
-(102, 5, 'a', '', '2021-01-22 15:37:39');
+(97, 5, 'a', '', '2021-01-09 17:42:31');
 
 -- --------------------------------------------------------
 
@@ -159,9 +155,7 @@ INSERT INTO `user_1` (`user_id`, `f_name`, `l_name`, `user_name`, `describe_user
 (6, 'phat', 'nguyen', 'phat_nguyen_467468', 'Hello Coding Cafe.This is my default status!', '...', 'phatphat', 'phat1@gmail.com', 'Viet Nam', 'Nam', '1999-01-21', '../assets/images/covit.png', '../assets/images/banner.png', '2020-12-06 04:11:46', 'hoatdong', 'yes', 'Iwanttoputading intheuniverse.'),
 (7, 'phat', 'nguyen', 'phat_nguyen_385275', 'Hello Coding Cafe.This is my default status!', '...', '999999999', 'phat211@gmail.com', 'Viet Nam', 'Nam', '1999-01-21', '../assets/images/avatar_mac_dinh.png', '../assets/images/banner.png', '2020-12-06 04:24:47', 'hoatdong', 'no', 'Iwanttoputading intheuniverse.'),
 (8, 'ali', 'Ce', 'ali_Ce_91930', 'Hello Coding Cafe.This is my default status!', '...', 'phatphat', 'ali@gmail.com', 'Viet Nam', 'Nam', '1999-01-21', '../assets/images/avatar_mac_dinh.png', '../assets/images/banner.png', '2020-12-06 05:53:33', 'hoatdong', 'yes', 'Iwanttoputading intheuniverse.'),
-(9, 'aq', 'qq', 'aq_qq_815669', 'Hello Coding Cafe.This is my default status!', '...', 'phatphat', 'q@gmail.com', 'Viet Nam', 'Nam', '1999-01-21', '../assets/imageava/9.1.png', '../assets/imagecover/47.1.jpg', '2020-12-06 06:06:40', 'hoatdong', 'yes', 'Iwanttoputading intheuniverse.'),
-(10, 'a1', 'a', 'a1_a_379647', 'hello speed code', 'ddocj than', 'phatphat', 'phat123@gmail.com', 'Viet Nam', 'Nam', '2001-12-12', '../assets/images/avatar_mac_dinh.png', '../assets/images/banner.png', '2021-01-21 04:56:27', 'hoatdong', 'no', 'Chua kich hoat'),
-(11, 'a', 'q', 'a_q_907040', 'hello speed code', 'ddocj than', 'phatphat', 'pha22t@gmail.com', 'Viet Nam', 'Nam', '2021-01-04', '../assets/images/avatar_mac_dinh.png', '../assets/images/banner.png', '2021-01-22 15:36:57', 'hoatdong', 'no', 'Chua kich hoat');
+(9, 'aq', 'qq', 'aq_qq_815669', 'Hello Coding Cafe.This is my default status!', '...', 'phatphat', 'q@gmail.com', 'Viet Nam', 'Nam', '1999-01-21', '../assets/imageava/9.1.png', '../assets/imagecover/47.1.jpg', '2020-12-06 06:06:40', 'hoatdong', 'yes', 'Iwanttoputading intheuniverse.');
 
 --
 -- Indexes for dumped tables
@@ -199,7 +193,7 @@ ALTER TABLE `user_1`
 -- AUTO_INCREMENT for table `binh_luan`
 --
 ALTER TABLE `binh_luan`
-  MODIFY `bl_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `bl_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `chat`
@@ -211,13 +205,13 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `user_1`
 --
 ALTER TABLE `user_1`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
