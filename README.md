@@ -54,7 +54,7 @@
   <li>Nguồn Source Code <a href="https://drive.google.com/drive/folders/17h1s8fuhXTnZsAe-pqDoyfNggsdQeTaO">link to Source Code!</a></li>
   <p>- Với Source Code trên em đã sửa và thêm chức năng post bài viết, chat 1 vs 1, sửa thông tin cá nhân,.... </p>
   <li>Bootstrap <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">link to Bootstrap!</a></li>
-  <li>PHP <a href="https://www.php.net/docs.php">link to Youtube!</a></li>
+  <li>PHP <a href="https://www.php.net/docs.php">link to Documentation!</a></li>
 </ul>
 <h2><a id="thanhvien" class="anchor" aria-hidden="true" href="#thanhvien"> </a><g-emoji class="g-emoji" alias="boy">☺</g-emoji> Thành viên: </h2>
 <ul>
